@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="false" packagingData="true">
+	<property resource="logback.properties" />
+	<contextName>endend</contextName>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are by default assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+		<encoder>
+			<pattern>%magenta(%d{HH:mm:ss.SSS}) [%thread] %highlight(%-5level)
+				%cyan(%logger{16}) %n%caller{1}- %green(%msg) %n
+			</pattern>
+		</encoder>
+	</appender>
+	<logger name="ch.qos.logback" level="ERROR" additivity="false" />
+	<logger name="org.springframework" level="ERROR" additivity="false" />
+	<logger name="org.mybatis" level="ERROR" additivity="false" />
+	<logger name="org.apache.ibatis" level="ERROR" additivity="false" />
+	<logger name="org.apache.ibatis.logging" level="ERROR"
+		additivity="false" />
+	<root level="debug">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
