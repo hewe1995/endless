@@ -16,7 +16,6 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>${servlet.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -24,7 +23,22 @@
 			<artifactId>endless-web</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<!-- START==文件上传 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+		</dependency>
+		<!-- END== 文件上传 -->
+		<!-- START==freemarker -->
+		<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
+		<!-- END== freemarker -->
 	</dependencies>
+
 	<build>
 		<finalName>endless-user-web</finalName>
 	</build>
