@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.end.user.dao.interfac.SubscriberDao">
-  <resultMap id="BaseResultMap" type="org.end.user.domain.Subscriber">
+<mapper namespace="org.endless.user.dao.interfac.SubscriberDao">
+  <resultMap id="BaseResultMap" type="org.endless.user.domain.Subscriber">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="login" jdbcType="VARCHAR" property="login" />
@@ -69,7 +69,7 @@
   <sql id="Base_Column_List">
     id, email, login, passwd, phone
   </sql>
-  <select id="selectByExample" parameterType="org.end.user.domain.SubscriberExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.endless.user.domain.SubscriberExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -109,19 +109,19 @@
     delete from subscriber
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="org.end.user.domain.SubscriberExample">
+  <delete id="deleteByExample" parameterType="org.endless.user.domain.SubscriberExample">
     delete from subscriber
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="org.end.user.domain.Subscriber">
+  <insert id="insert" parameterType="org.endless.user.domain.Subscriber">
     insert into subscriber (id,email, login, passwd, 
       phone)
     values (#{id,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{login,jdbcType=VARCHAR}, #{passwd,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="org.end.user.domain.Subscriber">
+  <insert id="insertSelective" parameterType="org.endless.user.domain.Subscriber">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -155,7 +155,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.end.user.domain.SubscriberExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="org.endless.user.domain.SubscriberExample" resultType="java.lang.Long">
     select count(*) from subscriber
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -195,7 +195,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="org.end.user.domain.Subscriber">
+  <update id="updateByPrimaryKeySelective" parameterType="org.endless.user.domain.Subscriber">
     update subscriber
     <set>
       <if test="email != null">
@@ -213,7 +213,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="org.end.user.domain.Subscriber">
+  <update id="updateByPrimaryKey" parameterType="org.endless.user.domain.Subscriber">
     update subscriber
     set email = #{email,jdbcType=VARCHAR},
       login = #{login,jdbcType=VARCHAR},

@@ -15,7 +15,7 @@
 	<aop:aspectj-autoproxy />
 
 	<!-- scans packages to find and register beans within the application context -->
-	<context:component-scan base-package="org.end.dao">
+	<context:component-scan base-package="org.endless.dao">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>

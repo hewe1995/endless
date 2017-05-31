@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.end.user.dao.interfac.ProfileDao">
-	<resultMap id="ProfileBaseResultMap" type="org.end.user.domain.Profile">
+<mapper namespace="org.endless.user.dao.interfac.ProfileDao">
+	<resultMap id="ProfileBaseResultMap" type="org.endless.user.domain.Profile">
 		<id column="id" jdbcType="VARCHAR" property="id" />
 		<result column="sex" jdbcType="TINYINT" property="sex" />
 	</resultMap>
@@ -73,7 +73,7 @@
 	<sql id="Base_Column_List">
 		id, sex
 	</sql>
-	<select id="selectByExample" parameterType="org.end.user.domain.ProfileExample"
+	<select id="selectByExample" parameterType="org.endless.user.domain.ProfileExample"
 		resultMap="ProfileBaseResultMap">
 		select
 		<if test="distinct">
@@ -116,13 +116,13 @@
 		profile
 		where id = #{id,jdbcType=VARCHAR}
 	</delete>
-	<delete id="deleteByExample" parameterType="org.end.user.domain.ProfileExample">
+	<delete id="deleteByExample" parameterType="org.endless.user.domain.ProfileExample">
 		delete from profile
 		<if test="_parameter != null">
 			<include refid="Example_Where_Clause" />
 		</if>
 	</delete>
-	<insert id="insert" parameterType="org.end.user.domain.Profile">
+	<insert id="insert" parameterType="org.endless.user.domain.Profile">
 		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
 			SELECT
 			LAST_INSERT_ID()
@@ -130,7 +130,7 @@
 		insert into profile (sex)
 		values (#{sex,jdbcType=TINYINT})
 	</insert>
-	<insert id="insertSelective" parameterType="org.end.user.domain.Profile">
+	<insert id="insertSelective" parameterType="org.endless.user.domain.Profile">
 		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
 			SELECT
 			LAST_INSERT_ID()
@@ -147,7 +147,7 @@
 			</if>
 		</trim>
 	</insert>
-	<select id="countByExample" parameterType="org.end.user.domain.ProfileExample"
+	<select id="countByExample" parameterType="org.endless.user.domain.ProfileExample"
 		resultType="java.lang.Long">
 		select count(*) from profile
 		<if test="_parameter != null">
@@ -177,7 +177,7 @@
 			<include refid="Update_By_Example_Where_Clause" />
 		</if>
 	</update>
-	<update id="updateByPrimaryKeySelective" parameterType="org.end.user.domain.Profile">
+	<update id="updateByPrimaryKeySelective" parameterType="org.endless.user.domain.Profile">
 		update profile
 		<set>
 			<if test="sex != null">
@@ -186,7 +186,7 @@
 		</set>
 		where id = #{id,jdbcType=VARCHAR}
 	</update>
-	<update id="updateByPrimaryKey" parameterType="org.end.user.domain.Profile">
+	<update id="updateByPrimaryKey" parameterType="org.endless.user.domain.Profile">
 		update profile
 		set
 		sex = #{sex,jdbcType=TINYINT}
