@@ -10,5 +10,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>endless-user-dao</module>
+    <module>endless-user-service</module>
+    <module>endless-user-web</module>
   </modules>
 </project>
