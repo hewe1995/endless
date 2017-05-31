@@ -4,4 +4,7 @@
   <artifactId>endless-root</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <modules>
+  	<module>endless-user-root</module>
+  </modules>
 </project>
