@@ -10,11 +10,46 @@ public class Subscriber implements Serializable {
 
 	private String email;
 
-	private String login;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Subscriber other = (Subscriber) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Subscriber [id=" + id + ", email=" + email + ", login=" + login + ", phone=" + phone + ", profile="
+				+ profile + "]";
+	}
+
+	private String login;
+	
 	private String passwd;
 
 	private String phone;
+
+	private String salt;
+
+	private Profile profile;
 
 	public String getId() {
 		return id;
@@ -54,5 +89,21 @@ public class Subscriber implements Serializable {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Profile getProfile() {
+		return profile;
+	}
+
+	public void setProfile(Profile profile) {
+		this.profile = profile;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 }

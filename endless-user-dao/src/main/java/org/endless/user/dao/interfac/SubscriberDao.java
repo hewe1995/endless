@@ -7,25 +7,37 @@ import org.endless.user.domain.Subscriber;
 import org.endless.user.domain.SubscriberExample;
 
 public interface SubscriberDao {
-    long countByExample(SubscriberExample example);
+	long countByExample(SubscriberExample example);
 
-    int deleteByExample(SubscriberExample example);
+	int insert(Subscriber record);
 
-    int deleteByPrimaryKey(String id);
+	int insertSelective(Subscriber record);
 
-    int insert(Subscriber record);
+	List<Subscriber> selectByExample(SubscriberExample example);
 
-    int insertSelective(Subscriber record);
+	Subscriber selectByPrimaryKey(String id);
 
-    List<Subscriber> selectByExample(SubscriberExample example);
+	int updateByExampleSelective(@Param("record") Subscriber record, @Param("example") SubscriberExample example);
 
-    Subscriber selectByPrimaryKey(String id);
+	int updateByExample(@Param("record") Subscriber record, @Param("example") SubscriberExample example);
 
-    int updateByExampleSelective(@Param("record") Subscriber record, @Param("example") SubscriberExample example);
+	int updateByPrimaryKeySelective(Subscriber record);
 
-    int updateByExample(@Param("record") Subscriber record, @Param("example") SubscriberExample example);
+	int updateByPrimaryKey(Subscriber record);
 
-    int updateByPrimaryKeySelective(Subscriber record);
+	/**
+	 * @param identity
+	 *            手机号邮箱或登录名
+	 * @return
+	 */
+	Subscriber selectByidentity(String identity);
 
-    int updateByPrimaryKey(Subscriber record);
+	/**
+	 * 批量插入,测试使用
+	 * 
+	 * @param record
+	 * @return
+	 */
+	@Deprecated
+	int insertBatch(List record);
 }

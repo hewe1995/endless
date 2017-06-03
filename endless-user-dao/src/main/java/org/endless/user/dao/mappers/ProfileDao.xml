@@ -123,12 +123,8 @@
 		</if>
 	</delete>
 	<insert id="insert" parameterType="org.endless.user.domain.Profile">
-		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-			SELECT
-			LAST_INSERT_ID()
-		</selectKey>
-		insert into profile (sex)
-		values (#{sex,jdbcType=TINYINT})
+		insert into profile (id,sex)
+		values (#{id,jdbcType=VARCHAR},#{sex,jdbcType=TINYINT})
 	</insert>
 	<insert id="insertSelective" parameterType="org.endless.user.domain.Profile">
 		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
