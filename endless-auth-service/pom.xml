@@ -20,5 +20,13 @@
 			<artifactId>endless-auth-dao</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<!-- START==spring 测试模块 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- END==spring 测试模块 -->
 	</dependencies>
 </project>

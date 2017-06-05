@@ -37,9 +37,16 @@
 			<version>2.3.23</version>
 		</dependency>
 		<!-- END== freemarker -->
+		<!-- START==spring 测试模块 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- END==spring 测试模块 -->
 	</dependencies>
 
 	<build>
-		<finalName>endless-user-web</finalName>
+		<finalName>/</finalName>
 	</build>
 </project>

@@ -3,6 +3,8 @@ package org.endless.user.web;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,13 +12,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/user")
 public class TestController {
 
 	@GetMapping("/test")
-	public String getTest(ModelMap map) {
+	public String getTest(ModelMap map, HttpSession session) {
 		String name = "hewe";
-		map.put("name", name);
+		map.put("name", session.getAttribute("test"));
 		return "test";
 	}
 

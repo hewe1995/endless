@@ -63,10 +63,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-jpa</artifactId>
-		</dependency>
+
 		<!-- END==spring DATA模块 -->
 		<!-- START== 数据库连接和连接池模块 -->
 		<dependency>

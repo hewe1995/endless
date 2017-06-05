@@ -9,13 +9,9 @@
 	http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<!-- 引用jdbc配置文件 -->
-	<bean id="propertyConfigurer"
+	<bean id="redis2Configurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations">
-			<list>
-				<value>classpath*:dataconn.properties</value>
-			</list>
-		</property>
+		<property name="locations" value="classpath*:*.properties" />
 	</bean>
 	<!-- 配置数据源，使用的是alibaba的Druid(德鲁伊)数据源 -->
 	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
