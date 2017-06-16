@@ -297,5 +297,7 @@
     <module>endless-auth-web</module>
     <module>endless-auth-dao</module>
     <module>endless-auth-service</module>
+    <module>endless-login-web</module>
+    <module>endless-home-web</module>
   </modules>
 </project>

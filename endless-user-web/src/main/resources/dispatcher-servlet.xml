@@ -19,7 +19,7 @@
 	<!-- <mvc:resources location="/WEB-INF/page/" mapping="/WEB-INF/page/**"/> -->
 
 	<!-- 自动扫描的包名 -->
-	<context:component-scan base-package="org.endless.user.web"
+	<context:component-scan base-package="org.endless.user.web.controller"
 		use-default-filters="false">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
@@ -39,7 +39,7 @@
 
 	<!-- START== 视图解析器 -->
 	<bean id="freemarkerConfig"
-		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		class="org.endless.user.web.shiro.tags.ShiroTagFreeMarkerConfigurer">
 		<property name="templateLoaderPath" value="/WEB-INF/view/" />
 		<property name="freemarkerSettings">
 			<props>
@@ -65,5 +65,5 @@
 	<bean id="exceptionHandlerExceptionResolver"
 		class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver">
 	</bean>
-
+	<import resource="spring-mvc-shiro.xml" />
 </beans>

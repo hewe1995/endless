@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<@shiro.guest>nihao</@shiro.guest> <@shiro.principal
+	property="phone"></@shiro.principal>
+	<h1>个人信息</h1>
+	<#if subscriber>
+	<table>
+
+		<#if subscriber.profile>
+		<tr>
+			<td>性别:</td>
+			<td>${subscriber.profile.sex}</td>
+		</tr>
+		</#if>
+	</table>
+	</#if>
+</body>
+</html>

@@ -31,11 +31,8 @@ public class UserServiceTest {
 
 		sub = new Subscriber();
 		sub.setId(DaoUtils.uuid());
-		sub.setPhone("18233293969");
-		String salt = PasswordHelper.encryptSalt(null);
-		String pass = PasswordHelper.encryptPassword("123123", salt);
-		sub.setSalt(salt);
-		sub.setPasswd(pass);
+		sub.setPhone("18233293963");
+		sub.setPasswd("123");
 		System.out.println(userService.createUser(sub));
 	}
 
